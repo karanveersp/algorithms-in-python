@@ -1,5 +1,5 @@
 
-def bubblesort(items: list):
+def bubblesort(xs: list):
     """
     Bubble sort algorithm implementation.
     Worst case time complexity is O(N^2).
@@ -14,18 +14,18 @@ def bubblesort(items: list):
 
     If an iteration of the inner loop happens without any swaps, the list is sorted.
 
-    :param items: sequence to sort in-place
+    :param xs: sequence to sort in-place
     """
-    n = len(items)
+    n = len(xs)
 
     for i in range(0, n - 1):
         swapped = False
         for j in range(0, n - 1 - i):
-            if items[j] > items[j + 1]:
+            if xs[j] > xs[j + 1]:
                 # swap
-                t = items[j]
-                items[j] = items[j + 1]
-                items[j + 1] = t
+                t = xs[j]
+                xs[j] = xs[j + 1]
+                xs[j + 1] = t
                 swapped = True
 
         if not swapped:

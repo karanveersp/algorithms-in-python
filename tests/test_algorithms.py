@@ -8,5 +8,11 @@ def test_bubblesort():
     assert items == [0, 1, 2, 3]
 
 
+def test_quicksort():
+    items = [2, 3, 1, 0]
+    sorting.quicksort(items, 0, len(items))
+    assert items == [0, 1, 2, 3]
+
+
 def test_version():
     assert __version__ == '0.1.0'
