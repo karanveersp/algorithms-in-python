@@ -9,9 +9,15 @@ def test_bubblesort():
 
 
 def test_quicksort():
-    items = [2, 3, 1, 0]
+    items = [2, 3, 2, 1, 0]
     sorting.quicksort(items, 0, len(items))
-    assert items == [0, 1, 2, 3]
+    assert items == [0, 1, 2, 2, 3]
+
+
+def test_quicksort_immutable():
+    items = [2, 3, 1, 2, 0]
+    actual = sorting.quicksort_immutable(items)
+    assert actual == [0, 1, 2, 2, 3]
 
 
 def test_version():

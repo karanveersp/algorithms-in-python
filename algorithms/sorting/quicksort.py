@@ -43,3 +43,24 @@ def _partition(xs: list, lo: int, hi: int) -> int:
             leftwall += 1
 
     return leftwall
+
+
+def quicksort_immutable(xs: list) -> list:
+    """
+    Quicksort implementation without relying on mutation.
+    It returns the sorted list as a result without changing the input list.
+
+    :param xs: sequence to sort
+    :return: sorted list
+    """
+    if not xs:
+        return []
+
+    pivot = xs[0]  # leftmost item is the pivot
+
+    left_partition = [x for x in xs[1:] if x <= pivot]  # smaller or equal items, not including pivot
+    right_partition = [x for x in xs[1:] if x > pivot]  # greater items, not including pivot
+
+    # recursive call to sort left partition, the pivot element itself, and sort right partition,
+    # concatenating the results, and returning.
+    return quicksort_immutable(left_partition) + [pivot] + quicksort_immutable(right_partition)
